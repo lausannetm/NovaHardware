@@ -1,0 +1,23 @@
+<app-search></app-search>
+<ul>
+    <li *ngFor="let laptop of laptops">
+        <a routerLink="/laptop/{{laptop.id}}"><img [src]="laptop.imageUrl" [alt]="laptop.name"/>
+            <div class="content">
+                <div class="name">{{laptop.name}}</div>
+                <span class="favorite {{laptop.favorite?'':'not'}}">❤</span>
+                <div class="product-item-footer">
+                    <div class="origins">
+                        <span *ngFor="let origin of laptop.origins">{{origin}}</span>
+                    </div>
+                    <div class="cook-time">
+                        <span>🕗</span>
+                        {{laptop.cookTime}}
+                    </div>
+                </div>
+                <div class="price">
+                    <span>{{laptop.price|currency}}</span>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>
